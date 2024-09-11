@@ -1,56 +1,25 @@
 <?php
 
-class Author
-{
-    public $name;
-    public $description;
-}
+require_once "Author.php";
+require_once "Book.php";
+require_once "Publisher.php";
 
-class Book
-{
-    public $ISBN;
-    public $title;
-    public $description;
-    public $category;
-    public $language;
-    public $numberOfPage;
-    public $author;
-    public $publisher;
+$author=new Author();
+$author->name="Risa Saraswati";
+$author->description="Penulis buku";
 
-    public function showAll()
-    {
-        return[
-            'ISBN'=>$this->ISBN,
-            'Title'=>$this->title,
-            'Description'=>$this->description,
-            'Language'=>$this->language,
-            "Number Of Page"=>$this->numberOfPage,
-            'Author'=>$this->author,
-            'Publisher'=>$this->publisher,];
-    }
 
-    public function detail ($ISBN) 
-    {
-        if ($this->ISBN==$ISBN){
-            return $this -> showAll();
-        }
-        return null;
-    }
-}
+$book=new Book;
+$book->ISBN="9786022202363";
+$book->title="Asih";
+$book->description="-";
+$book->language="Bahasa Indonesia";
+$book->numberOfPage="194";
+$book->author="Risa Saraswati";
+$book->publisher="Bukune";
 
-class Publisher
-{
-    public $name;
-    public $address;
-    private $phone;
+$publisher=new Publisher;
+$publisher->name="Bukune";
+$publisher->address="Jl. H. Montong No. 57 Ciganjur Jagakarsa Jakarta Selatan 12630";
 
-    private function setPhone($phone)
-    {
-        $this->phone = $phone;
-    }
-
-    private function getPhone()
-    {
-        return $this->phone;
-    }
-}
+print_r($book->showAll());
