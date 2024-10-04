@@ -11,7 +11,7 @@ class Pegawai
     }
     public function cekOut(){
     }
-    public function getNoHp(){
+    protected function getNoHp(){
     }
     public function setNoHp(): void{
     } 
